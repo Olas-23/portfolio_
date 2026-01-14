@@ -14,14 +14,14 @@ const Header = () => {
 				{/* logo */}
 				<Link href="/" className="relative">
 					<h1 className="xl:text-2xl text-4xl font-semibold relative">
-						Bart<span className="text-accent">.</span>
+						Olas<span className="text-accent">.</span>
 					</h1>
 				</Link>
 				{/* desktop nav */}
 				<div className="hidden xl:flex items-center gap-14">
 					<Nav />
 					<Link href="/contact">
-						<Button className="">Hire me</Button>
+						<Button className="">Contact me</Button>
 					</Link>
 				</div>
 

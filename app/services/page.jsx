@@ -6,30 +6,30 @@ import { BsArrowDownRight } from "react-icons/bs";
 const services = [
     {
 		num: '01',
-		title: 'Mobile Development',
+		title: 'Product Design',
 		description:
-			'I design and develop scalable mobile applications with clean, reusable interfaces that support long-term maintenance and efficient product growth.',
+			'I design user-centered digital products from concept to launch, focusing on clarity, usability, and real user needs.',
 		href: '',
 	},
 	{
 		num: '02',
-		title: 'Web Development',
+		title: 'Interface & Design Systems',
 		description:
-			'I Build pixel perfect reusable frontend for easy maintenance and affordable development cost. Using technical or non technical tools.',
+			'I create clean, consistent interfaces and scalable design systems that keep products visually aligned and easy to extend.',
 		href: '',
 	},
 	{
 		num: '03',
-		title: 'Full Stack',
+		title: 'UX Strategy & Research',
 		description:
-			'Creating a fast flowing fullstack website with api integrating and well structured database, using Javascript, NodeJS, Mongo DB, RestApi...',
+			'I uncover user needs through research, journey mapping, and analysis to inform smarter design decisions and reduce guesswork.',
 		href: '',
 	},
 	{
 		num: '04',
-		title: 'SEO',
+		title: 'Usability Optimization',
 		description:
-			'Building SEO optimized website and modifying existing website for high user attraction and retention.',
+			'I test, refine, and improve designs based on feedback and real usage to ensure products are intuitive and effective.',
 		href: '',
 	},
 ];

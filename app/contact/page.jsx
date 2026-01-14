@@ -20,17 +20,17 @@ const info = [
 	{
 		icon: <FaPhoneAlt />,
 		title: 'Phone',
-		description: '(+234) 905 087 0228',
+		description: '(+234) 802 658 7123',
 	},
 	{
 		icon: <FaEnvelope />,
 		title: 'Email',
-		description: 'eguobabarth@gmail.com',
+		description: 'olaoluwaajayib23@gmail.com',
 	},
 	{
 		icon: <FaMapMarkedAlt />,
 		title: 'Address',
-		description: 'Lagos, Nigeria',
+		description: 'Abuja, Nigeria',
 	},
 ];
 
@@ -79,7 +79,7 @@ const Contact = () => {
         const templateParams = {
             from_name: `${data.firstName} ${data.lastName}`,
             from_email: data.email,
-            to_name: "Bartholomew Eguoba",
+            to_name: "Olaoluwa Ajayi",
             message: data.message,
             phone: data.phone,
             option: data.option
@@ -198,11 +198,8 @@ const Contact = () => {
 										<SelectContent>
 											<SelectGroup>
 												<SelectLabel>Select a service</SelectLabel>
-												<SelectItem value="web development">Web Development</SelectItem>
-												<SelectItem value="SEO Optimization">Seo Optimization</SelectItem>
-												<SelectItem value="web-flow & Shopify">
-													Web Flow and Shopify
-												</SelectItem>
+												<SelectItem value="Product Design">Product Design</SelectItem>
+												<SelectItem value="Brand Design">Brand Design</SelectItem>
 												<SelectItem value="consultation">
 													Consultation
 												</SelectItem>

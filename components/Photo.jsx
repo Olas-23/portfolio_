@@ -22,12 +22,12 @@ const Photo = () => {
 					className="w-[298px] h-[250px] xl:w-[498px] xl:h-[430px] mix-blend-lighten absolute"
 				>
 					<Image
-						src="/assets/photo.png"
+						src="/assets/img2.png"
 						alt="Hero_image"
 						priority
 						quality={100}
 						fill
-						className="object-contain"
+						className="object-contain rounded-full"
 					/>
 				</motion.div>
 
@@ -41,13 +41,13 @@ const Photo = () => {
                         cx="253"
                         cy="253"
                         r="250"
-                        stroke="#00ff99"
+                        stroke="rgba(0, 100, 224, 1)"
                         strokeWidth="4"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         initial={{ strokeDasharray: '24 10 0 0' }}
                         animate={{
-                            strokeDasharray: ['15 120 25 25', '16 25 92 72', '4 250 22 22'],
+                            strokeDasharray: ['0, 100, 224, 1', '16 25 92 72', '4 250 22 22'],
                             rotate: [120, 360],
                         }}
                         transition={{

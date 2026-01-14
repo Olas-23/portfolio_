@@ -1,138 +1,151 @@
-"use client"
+"use client";
 
-import { FaBootstrap, FaCss3, FaHtml5, FaJs, FaNodeJs, FaReact } from 'react-icons/fa';
-import { SiCsharp, SiNextdotjs, SiTailwindcss } from "react-icons/si";
-import { ScrollArea } from '@/components/ui/scroll-area';
+import {
+  FaBootstrap,
+  FaCss3,
+  FaFigma,
+  FaHtml5,
+  FaJs,
+  FaNodeJs,
+  FaReact,
+} from "react-icons/fa";
+import {
+  SiAdobeillustrator,
+  SiAdobeindesign,
+  SiAdobephotoshop,
+  SiCanva,
+  SiCsharp,
+  SiFramer,
+  SiNextdotjs,
+  SiTailwindcss,
+} from "react-icons/si";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import { motion } from 'framer-motion';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { motion } from "framer-motion";
 
 const about = {
-	title: 'About me',
-	description: [
-  "I help startups, small businesses, and large organizations design and build clean, scalable web and mobile applications that are easy to maintain and cost-effective to grow. My focus is on creating pixel-perfect, reusable interfaces that balance great user experience with long-term product sustainability.",
-  "Having worked across multiple stages of product development — from early concepts to production and scaling — I understand how to build solutions that support business growth, improve efficiency, and drive real value.",
-  "Outside of work, I enjoy playing video games, exploring music across different genres, and staying active with basketball."
-	],
-	info: [
-		{
-			fieldName: 'Name',
-			fieldValue: 'Bartholomew Eguoba',
-		},
-		{
-			fieldName: 'Phone',
-			fieldValue: '(+234) 905 087 0228',
-		},
-		{
-			fieldName: 'Experience',
-			fieldValue: '5+ Years',
-		},
-		{
-			fieldName: 'Nationality',
-			fieldValue: 'Nigerian',
-		},
-		{
-			fieldName: 'Email',
-			fieldValue: 'eguobabarth@gmail.com',
-		},
-		{
-			fieldName: 'Freelance',
-			fieldValue: 'Available',
-		},
-		{
-			fieldName: 'Language',
-			fieldValue: 'English',
-		},
-	],
+  title: "About me",
+  description: [
+    "I design digital products that are clear, intuitive, and built to be used in the real world. I enjoy solving design problems, taking on new challenges, and turning complex ideas into experiences that feel simple and natural. UI/UX design is my craft, but curiosity and learning are what keep me sharp.",
+    "Beyond design, I'm pretty laid-back and easygoing, especially in public spaces. I love football, enjoy video games, and I’m always up for exploring something new. I like meeting people, hearing their stories, and exchanging ideas. Creativity is something I carry beyond screens, and I bring that same energy into every product I work on.",
+  ],
+  info: [
+    {
+      fieldName: "Name",
+      fieldValue: "Olaoluwa Ajayi",
+    },
+    {
+      fieldName: "Phone",
+      fieldValue: "(+234) 802 658 7123",
+    },
+    {
+      fieldName: "Experience",
+      fieldValue: "4+ Years",
+    },
+    {
+      fieldName: "Nationality",
+      fieldValue: "Nigerian",
+    },
+    {
+      fieldName: "Email",
+      fieldValue: "olaoluwaajayib23@gmail.com",
+    },
+    {
+      fieldName: "Freelance",
+      fieldValue: "Available",
+    },
+    {
+      fieldName: "Language",
+      fieldValue: "English",
+    },
+  ],
 };
 
-
 const experience = {
-	icon: '/assets/resume/badge.svg',
-	title: 'My experience',
-	description:
-		"You'll find below my work experiences, from past to present.",
-	items: [
-		{
-			company: 'E-Scape Technologies',
-			position: 'Lead Web and Mobile Developer',
-			duration: 'Sept 2025 - Present',
-		},
-		{
-			company: 'HireHuub',
-			position: 'Lead Front-End Developer',
-			duration: 'Nov 2024 - Present',
-		},
-		{
-			company: 'Gfams Co-Operative / Intrinsic',
-			position: 'Lead Front-End Developer',
-			duration: 'Jan 2024 - Dec 2024',
-		},
-		{
-			company: 'Black Shakara',
-			position: 'Front-End Developer',
-			duration: '2023 - 2024',
-		},
-		{
-			company: 'Ingressive for Good(I4G)',
-			position: 'Web Developer Intern',
-			duration: '2022 - 2022',
-		},
-		{
-			company: 'Edo Innovation Hub',
-			position: 'IT, Cloud Practitioner(AWS)',
-			duration: '2021 - 2021',
-		},
-		{
-			company: 'Digital and Design Studio',
-			position: 'Photo Editor and Graphics Designer',
-			duration: '2017 - 2018',
-		},
-	],
+  icon: "/assets/resume/badge.svg",
+  title: "My experience",
+  description: "You'll find below my work experiences, from present to past.",
+  items: [
+    {
+      company: "E-Scape Technologies",
+      position: "UI/UX Designer",
+      duration: "Nov 2021 - Present",
+    },
+    {
+      company: "Backyard Technologies",
+      position: "UI/UX Designer",
+      duration: "Feb 2025 - Present",
+    },
+    {
+      company: "E-Scape Technologies",
+      position: "Enterprise Architecte",
+      duration: "Sept 2022 - Present",
+    },
+    {
+      company: "KOICA",
+      position: "Enterprise Architecture Consultant",
+      duration: "Jan 2023 - Sept 2025",
+    },
+    {
+      company: "E-Scape Technologies",
+      position: "Web Developer Intern",
+      duration: "2022 - 2023",
+    },
+    {
+      company: "Intercontinental Distillers Ltd.",
+      position: "IT Support Specialist",
+      duration: "2020 - 2021",
+    },
+    {
+      company: "ATM Dreams",
+      position: "Graphics Designer",
+      duration: "2017 - 2018",
+    },
+  ],
 };
 
 const education = {
-	icon: '/assets/resume/cap.svg',
-	title: 'My education',
-	description:
-		'My Educational background and courses taken',
-	items: [
-		{
-			institution: 'Udemy',
-			degree: 'Rust Programming Language',
-			duration: '2025',
-		},
-		{
-			institution: 'FreeCodeCamp',
-			degree: 'Foundational C Sharp With Microsoft',
-			duration: '2024',
-		},
-		{
-			institution: 'The Web Development BootCamp',
-			degree: 'Full-Stack Web Development',
-			duration: '2022',
-		},
-		{
-			institution: 'University of Benin',
-			degree: 'Bsc. Computer Science',
-			duration: '2017 - 2022',
-		},
-		{
-			institution: 'Mosh Hamadani',
-			degree: 'OOP with Javascript',
-			duration: '2021',
-		},
-		{
-			institution: 'FreeCodeCamp',
-			degree: 'HTML, CSS',
-			duration: '2021',
-		},
-		{
-			institution: 'Edo Innovation Hub',
-			degree: 'AWS Cloud Practitioner',
-			duration: '2021',
-		},
-	],
+  icon: "/assets/resume/cap.svg",
+  title: "My education",
+  description: "My Educational background and courses taken",
+  items: [
+    {
+      institution: "Udemy",
+      degree: "Rust Programming Language",
+      duration: "2025",
+    },
+    {
+      institution: "FreeCodeCamp",
+      degree: "Foundational C Sharp With Microsoft",
+      duration: "2024",
+    },
+    {
+      institution: "The Web Development BootCamp",
+      degree: "Full-Stack Web Development",
+      duration: "2022",
+    },
+    {
+      institution: "Adeleke University",
+      degree: "Bsc. Computer Science",
+      duration: "2017 - 2021",
+    },
+    {
+      institution: "Mosh Hamadani",
+      degree: "OOP with Javascript",
+      duration: "2021",
+    },
+    {
+      institution: "FreeCodeCamp",
+      degree: "HTML, CSS",
+      duration: "2021",
+    },
+  ],
 };
 
 const skills = {
@@ -152,38 +165,35 @@ const skills = {
       name: "Javascript",
     },
     {
-      icon: <FaReact />,
-      name: "React Js",
-    },
-    {
-      icon: <SiNextdotjs />,
-      name: "NextJs",
-    },
-    {
-      icon: <SiCsharp />,
-      name: "C#",
-    },
-    {
-      icon: <SiTailwindcss />,
-      name: "TailwindCss",
-    },
-    {
-      icon: <FaNodeJs />,
-      name: "NodeJs",
-    },
-    {
       icon: <FaBootstrap />,
       name: "Bootstrap",
     },
     {
-      icon: <FaReact />,
-      name: "React Native",
+      icon: <FaFigma />,
+      name: "Figma",
     },
+    {
+      icon: <SiFramer />,
+      name: "Framer",
+    },
+    {
+      icon: <SiCanva />,
+      name: "Canva",
+    },
+    // {
+    //   icon: <SiAdobephotoshop />,
+    //   name: "Photoshop",
+    // },
+    // {
+    //   icon: <SiAdobeindesign />,
+    //   name: "Adobe InDesign",
+    // },
+    // {
+    //   icon: <SiAdobeillustrator />,
+    //   name: "Adobe Illustrator",
+    // },
   ],
 };
-
-
-
 
 const Resume = () => {
   return (
@@ -197,25 +207,49 @@ const Resume = () => {
     >
       <div className="container mx-auto">
         <Tabs
-          defaultValue="experience"
+          defaultValue="about"
           className="flex flex-col xl:flex-row gap-[60px]"
         >
           <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
+            <TabsTrigger value="about">About me</TabsTrigger>
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="education">Education</TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
-            <TabsTrigger value="about">About me</TabsTrigger>
           </TabsList>
 
           <div className="min-h-[70vh] w-full">
+            {/* about me */}
+            <TabsContent
+              value="about"
+              className="w-full text-center xl:text-left"
+            >
+              <div className="flex flex-col gap-[30px]">
+                <h3 className="text-3xl font-bold">{about.title}</h3>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                  {about.description}
+                </p>
+                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-5 max-w-[620px] mx-auto xl:mx-0">
+                  {about.info.map((item, index) => {
+                    return (
+                      <li
+                        key={index}
+                        className="flex items-center justify-center xl:justify-start gap-4 text-sm"
+                      >
+                        <span className="text-white/60">{item.fieldName}</span>
+                        <span className="text-white">{item.fieldValue}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </TabsContent>
+
             {/* experience */}
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-3xl font-bold">{experience.title}</h3>
                 <div className="max-w-[600px] w-full text-white/60 mx-auto xl:mx-0 space-y-4">
-                  {about.description.map((paragraph, index) => (
-                    <p key={index}>{paragraph}</p>
-                  ))}
+                  {experience.description}
                 </div>
                 <ScrollArea className="h-[400px]">
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
@@ -305,37 +339,11 @@ const Resume = () => {
                 </ul>
               </div>
             </TabsContent>
-
-						{/* about me */}
-            <TabsContent
-              value="about"
-              className="w-full text-center xl:text-left"
-            >
-              <div className="flex flex-col gap-[30px]">
-                <h3 className="text-3xl font-bold">{about.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
-                  {about.description}
-                </p>
-                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-5 max-w-[620px] mx-auto xl:mx-0">
-                  {about.info.map((item, index) => {
-                    return (
-                      <li
-                        key={index}
-                        className="flex items-center justify-center xl:justify-start gap-4 text-sm"
-                      >
-                        <span className="text-white/60">{item.fieldName}</span>
-                        <span className="text-white">{item.fieldValue}</span>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            </TabsContent>
           </div>
         </Tabs>
       </div>
     </motion.div>
   );
-}
+};
 
-export default Resume
+export default Resume;

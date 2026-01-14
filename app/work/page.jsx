@@ -15,38 +15,37 @@ import Link from 'next/link';
 const projects = [
   {
     num: "01",
-    category: "frontend",
-    title: "HireHuub",
+    category: "Design",
+    title: "Mhino",
     description:
-      "HireHuub is a UK based comprehensive job search and career development platform designed to help students and professionals track, manage and optimize their job search process.",
+      "Mhino is a mobile-first micro-healthcare platform that democratizes access to quality healthcare and basic insurance by enabling flexible, bite-sized payments. It connects users, doctors, and agent centres into a single, end-to-end digital care ecosystem.",
     stack: [
-      { name: "Next,Js" },
-      { name: "Tailwind.css" },
-      { name: "Typescript" },
+      { name: "Figma" },
+      { name: "Jira" },
     ],
-    image: "/assets/work/hirehuub-image.webp",
-    live: "https://hirehuub.com/",
+    image: "/assets/work/Mhino_cover.png",
+    live: "https://mhino.com/",
     github: "https://github.com/retrong",
   },
   {
     num: "02",
-    category: "frontend",
+    category: "Design",
     title: "Car Alert",
     description:
       "Car Alert is a UK based vechicle management platform designed to help users and businesses track, manage and receive first hand notifications about parking tickets, vehicle tax and MOT renewal.",
     stack: [
-      { name: "Next,Js" },
-      { name: "Typescript" },
-      { name: "Chakra UI" },
+      { name: "Figma" },
+      { name: "Jira" },
+
     ],
-    image: "/assets/work/car-alert.png",
+    image: "/assets/work/CarAlert_cover.png",
     live: "https://landing.caralert247.com/",
     github: "https://github.com/retrong",
   },
   {
     num: "03",
-    category: "frontend",
-    title: "QuikLearn",
+    category: "Design",
+    title: "Nemera Oil & Gas",
     description:
       "Quik Learn is a flexible online learning management system(LMS) designed to help students with structured, self-paced learning and personalied learning experience.",
     stack: [
@@ -54,7 +53,7 @@ const projects = [
       { name: "Chakra UI" },
       { name: "Typescript" },
     ],
-    image: "/assets/work/quiklearn.png",
+    image: "/assets/work/Nemera.png",
     live: "https://quiklearn.co.uk/",
     github: "https://github.com/retrong",
   },
@@ -201,12 +200,12 @@ const Work = () => {
 							</div>
 						</div>
 					</div>
-					<div className="w-full xl:w-[50%]">
+					<div className="w-full xl:w-[55%]">
 						<Swiper spaceBetween={30} slidesPerView={1} className='xl:h-[520px] mb-12' onSlideChange={handleSlideChange}>
 							{projects.map((project, index) => {
 								return (
 									<SwiperSlide key={index} className='w-full'>
-										<div className='max-h-[460px] h-full relative group flex justify-center items-center'>
+										<div className='max-h-[400px] h-full relative group flex justify-center items-center'>
 												<div className='absolute top-0 bottom-0 w-full h-full z-10'></div>
 												{/* image */}
 												<div className='relative w-full h-full'>

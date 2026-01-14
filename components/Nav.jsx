@@ -20,10 +20,10 @@ export const navLinks = [
 		name: 'work',
 		path: '/work',
 	},
-	{
-		name: 'contact',
-		path: '/contact',
-	},
+	// {
+	// 	name: 'contact',
+	// 	path: '/contact',
+	// },
 ];
 const Nav = () => {
     const pathname = usePathname();

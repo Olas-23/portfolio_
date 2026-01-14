@@ -12,8 +12,8 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata = {
-  title: "Bart - portfolio website",
-  description: "Bart Eguoba's Portfolio",
+  title: "Ola - portfolio website",
+  description: "Ola Ajayi's Portfolio",
 };
 
 export default function RootLayout({ children }) {
