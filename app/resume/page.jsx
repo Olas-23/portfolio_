@@ -117,28 +117,28 @@ const education = {
   items: [
     {
       institution: "Udemy",
-      degree: "Rust Programming Language",
-      duration: "2025",
+      degree: "Complete Web & Mobile Designer: UI/UX...",
+      duration: "2024 - 2025",
     },
     {
-      institution: "FreeCodeCamp",
-      degree: "Foundational C Sharp With Microsoft",
+      institution: "Daniel Walter - Udemy",
+      degree: "Figma UI UX Design Essentials",
       duration: "2024",
     },
     {
-      institution: "The Web Development BootCamp",
-      degree: "Full-Stack Web Development",
+      institution: "Scott Duffy - Udemy",
+      degree: "Enterprise Architecture - TOGAF 9.2",
+      duration: "2023",
+    },
+    {
+      institution: "App Brewery - Angela Yu",
+      degree: "The Complete Full-Stack Web Development Bootcamp",
       duration: "2022",
     },
     {
       institution: "Adeleke University",
       degree: "Bsc. Computer Science",
       duration: "2017 - 2021",
-    },
-    {
-      institution: "Mosh Hamadani",
-      degree: "OOP with Javascript",
-      duration: "2021",
     },
     {
       institution: "FreeCodeCamp",

@@ -30,9 +30,9 @@ const projects = [
   {
     num: "02",
     category: "Design",
-    title: "Car Alert",
+    title: "CarAlert247",
     description:
-      "Car Alert is a UK based vechicle management platform designed to help users and businesses track, manage and receive first hand notifications about parking tickets, vehicle tax and MOT renewal.",
+      "CarAlert247 is a UK based vechicle management platform designed to help users and businesses track, manage and receive first hand notifications about parking tickets, vehicle tax and MOT renewal.",
     stack: [
       { name: "Figma" },
       { name: "Jira" },
@@ -47,85 +47,83 @@ const projects = [
     category: "Design",
     title: "Nemera Oil & Gas",
     description:
-      "Quik Learn is a flexible online learning management system(LMS) designed to help students with structured, self-paced learning and personalied learning experience.",
+      "The Nemera project focused on the UI/UX rebranding and redesign of the Nemera Oil & Gas website, modernizing its digital presence to reflect a credible, professional, and forward-looking energy company.",
     stack: [
-      { name: "Next,Js" },
-      { name: "Chakra UI" },
-      { name: "Typescript" },
+      { name: "Figma" },
+      { name: "Jira" },
     ],
     image: "/assets/work/Nemera.png",
-    live: "https://quiklearn.co.uk/",
+    live: "https://nemera-chi.vercel.app/",
     github: "https://github.com/retrong",
   },
   {
     num: "04",
-    category: "frontend",
-    title: "Xyz Company",
+    category: "design",
+    title: "QuikLearn",
     description:
-      "XYZ web app dedicated to providing innovative solutions that meet the needs of our customers",
+      "The QuikLearn project delivered a user-centric learning platform that connects tutors, students, and parents, enabling parents to manage learning, tutors to deliver structured lessons, and students to engage through intuitive, age-appropriate experiences.",
     stack: [
-      { name: "Next,Js" },
-      { name: "Tailwind.css" },
-      { name: "Typescript" },
+      { name: "Figma" },
+      { name: "Jira" },
     ],
-    image: "/assets/work/Xyz-company.png",
-    live: "https://xyz-ntrinsic.com/",
+    image: "/assets/work/QuikLearn.png",
+    live: "https://quiklearn.co.uk/",
     github: "https://github.com/retrong",
   },
   {
     num: "05",
-    category: "frontend",
-    title: "DecorInn",
-    description:
-      "Designed a landing page for an interior decoration company to showcase their services and portfolio online.",
-    stack: [
-      { name: "Next,Js" },
-      { name: "Tailwind.css" },
-      { name: "Typescript" },
-    ],
-    image: "/assets/work/decorinn.png",
-    live: "https://decorinn.vercel.app/",
-    github: "https://decorinn.vercel.app/",
+    category: "design",
+    title: "Backyard Website",
+    description: "A simple corporate website for a consulting company.",
+    stack: [{ name: "Figma" },
+      { name: "Jira" },],
+    image: "/assets/work/bkyd.png",
+    live: "https://backyardtech.co.uk/",
+    github: "https://github.com/retrong",
   },
   {
     num: "06",
-    category: "frontend",
-    title: "De'drop",
-    description: "An Online Food Website",
-    stack: [{ name: "Html" }, { name: "CSS" }, { name: "Javascript" }],
-    image: "/assets/work/De-drop-snapshot.png",
-    live: "https://dedrop.vercel.app/",
-    github: "https://github.com/retrong",
-  },
-  {
-    num: "07",
-    category: "frontend",
-    title: "Gfams Accounting",
+    category: "design",
+    title: "MHRA",
     description:
-      'A "Get Quote" interface for companies and individuals to make enquire and get direct feedback about services.',
+      "The MHRA project focused on improving the digital experience of a regulatory platform, streamlining how complex health and compliance information is accessed, managed, and understood. The work emphasized clarity, usability, and trust",
     stack: [
-      { name: "Next.Js" },
-      { name: "Tailwind.css" },
-      { name: "Typescript" },
+      { name: "Figma" },
+      { name: "Jira" },
     ],
-    image: "/assets/work/Instant-Quote-snapshot.png",
-    live: "https://quote-account.vercel.app/",
-    github: "https://github.com/retrong",
+    image: "/assets/work/MHRA.png",
+    live: "https://decorinn.vercel.app/",
+    github: "https://decorinn.vercel.app/",
   },
-  {
-    num: "08",
-    category: "frontend",
-    title: "Aston Luxury Homes",
-    description: "An Online website for Luxury homes and Interior",
-    stack: [
-      { name: "Next,Js" },
-      { name: "Tailwind.css" },
-      { name: "Typescript" },
-    ],
-    image: "/assets/work/Aston homes.png",
-    live: "https://aston-website.vercel.app/",
-    github: "https://github.com/retrong/",
-  },
+  // {
+  //   num: "07",
+  //   category: "frontend",
+  //   title: "Gfams Accounting",
+  //   description:
+  //     'A "Get Quote" interface for companies and individuals to make enquire and get direct feedback about services.',
+  //   stack: [
+  //     { name: "Next.Js" },
+  //     { name: "Tailwind.css" },
+  //     { name: "Typescript" },
+  //   ],
+  //   image: "/assets/work/Instant-Quote-snapshot.png",
+  //   live: "https://quote-account.vercel.app/",
+  //   github: "https://github.com/retrong",
+  // },
+  // {
+  //   num: "08",
+  //   category: "frontend",
+  //   title: "Aston Luxury Homes",
+  //   description: "An Online website for Luxury homes and Interior",
+  //   stack: [
+  //     { name: "Next,Js" },
+  //     { name: "Tailwind.css" },
+  //     { name: "Typescript" },
+  //   ],
+  //   image: "/assets/work/Aston homes.png",
+  //   live: "https://aston-website.vercel.app/",
+  //   github: "https://github.com/retrong/",
+  // },
 ];
 
 
@@ -154,7 +152,7 @@ const Work = () => {
 								{project.num}
 							</div>
 							<h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-								{project.category} project
+								{project.title} project
 							</h2>
 							<p className="text-white/60">{project.description}</p>
 							<ul className="flex gap-4">
@@ -185,7 +183,7 @@ const Work = () => {
 								</Link>
 
 								{/* github project button path */}
-								<Link href={project.github}>
+								{/* <Link href={project.github}>
 									<TooltipProvider delayDuration={100}>
 										<Tooltip>
 											<TooltipTrigger className="w-[70px] h-[70px] rounded-full flex bg-white/5 justify-center items-center group">
@@ -196,7 +194,7 @@ const Work = () => {
 											</TooltipContent>
 										</Tooltip>
 									</TooltipProvider>
-								</Link>
+								</Link> */}
 							</div>
 						</div>
 					</div>
