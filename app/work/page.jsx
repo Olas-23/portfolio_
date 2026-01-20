@@ -142,11 +142,11 @@ const Work = () => {
 		<motion.div
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1, transition: {delay: 2.4, duration: 0.4, ease: "easeIn"} }}
-			className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
+			className="min-h-screen flex flex-col justify-center py-12 xl:px-0"
 		>
 			<div className="container mx-auto">
 				<div className="flex flex-col xl:flex-row xl:gap-[30px]">
-					<div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
+					<div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between">
 						<div className="flex flex-col gap-[30px] h-[50%]">
 							<div className="text-8xl leading-none font-extrabold text-transparent text-outline">
 								{project.num}
@@ -199,7 +199,7 @@ const Work = () => {
 						</div>
 					</div>
 					<div className="w-full xl:w-[55%]">
-						<Swiper spaceBetween={30} slidesPerView={1} className='xl:h-[520px] mb-12' onSlideChange={handleSlideChange}>
+						<Swiper spaceBetween={30} slidesPerView={1} className='xl:h-[520px] h-[350px] mb-12' onSlideChange={handleSlideChange}>
 							{projects.map((project, index) => {
 								return (
 									<SwiperSlide key={index} className='w-full'>
@@ -214,7 +214,7 @@ const Work = () => {
 								);
 							})}
 							{/* buttons */}
-							<WorkSliderBtns containerStyles="flex gap-2 absolute right-0 button-[calc(50%_-_220px)] xl:bottom-0 z-20 w-full justify-butween xl:w-max xl:justify-none" btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"/>
+							<WorkSliderBtns containerStyles="flex gap-2 absolute right-0 bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none" btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"/>
 						</Swiper>
 					</div>
 				</div>
@@ -222,5 +222,6 @@ const Work = () => {
 		</motion.div>
 	);
 }
+
 
 export default Work
