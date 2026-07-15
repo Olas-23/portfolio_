@@ -1,70 +1,74 @@
-"use client"
-import { motion } from 'framer-motion';
+import SectionReveal from '@/components/SectionReveal';
 import Link from 'next/link';
-import { BsArrowDownRight } from "react-icons/bs";
+import { BsArrowUpRight } from "react-icons/bs";
 
 const services = [
-    {
+	{
 		num: '01',
 		title: 'Product Design',
 		description:
 			'I design user-centered digital products from concept to launch, focusing on clarity, usability, and real user needs.',
-		href: '',
+		href: '/contact',
 	},
 	{
 		num: '02',
 		title: 'Interface & Design Systems',
 		description:
 			'I create clean, consistent interfaces and scalable design systems that keep products visually aligned and easy to extend.',
-		href: '',
+		href: '/contact',
 	},
 	{
 		num: '03',
 		title: 'UX Strategy & Research',
 		description:
 			'I uncover user needs through research, journey mapping, and analysis to inform smarter design decisions and reduce guesswork.',
-		href: '',
+		href: '/contact',
 	},
 	{
 		num: '04',
 		title: 'Usability Optimization',
 		description:
 			'I test, refine, and improve designs based on feedback and real usage to ensure products are intuitive and effective.',
-		href: '',
+		href: '/contact',
 	},
 ];
 
 const Service = () => {
   return (
-    <section className='min-h-[80vh] flex flex-col justify-center py-12 xl:py-0'>
-        <div className='container mx-auto'>
-            <motion.div initial={{opacity: 0}} animate={{
-                opacity: 1,
-                transition: {delay: 2.4, duration: 0.4, ease: "easeIn" },
-            }} className='grid grid-cols-1 md:grid-cols-2 gap-[60px]'>
-                {services.map((service, index) => {
-                    return (
-                        <div key={index} className='flex-1 flex flex-col justify-center gap-6 group'>
-                            <div className='w-full flex justify-between items-center'>
-                                <div className='text-5xl font-extrabold text-outline text-transparent cursor-pointer group-hover:text-outline-hover'>{service.num}</div>
-                                <Link href={service.href} className='w-[60px] h-[60px] rounded-full bg-white group-hover:bg-accent transition-all duration-500 flex justify-center items-center hover:-rotate-45'>
-                                    <BsArrowDownRight className='text-primary text-3xl' />
-                                </Link>
-                            </div>
-                            {/* title */}
-                            <h2 className='text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500'>{service.title}</h2>
-                            {/* description */}
-                            {/* add a toggle to description that opens it up for more of the description to open up and the visible one has an abbreviation with 3dots */}
-                            <p className='text-white/60'>{service.description}</p>
-                            {/* border */}
-                            <div className='border-b border-white/20 w-full'></div>
-                        </div>
-                    )
-                })}
-            </motion.div>
-        </div>
+    <div className="container mx-auto py-8 xl:py-12 pb-24">
+      <SectionReveal>
+        <span className="font-mono text-sm text-accent uppercase tracking-widest">
+          Services
+        </span>
+        <h1 className="display text-[44px] xl:text-[80px] mt-4 mb-16 max-w-3xl">
+          How I can help.
+        </h1>
+      </SectionReveal>
 
-    </section>
+      <div>
+        {services.map((service, index) => (
+          <SectionReveal key={index} delay={index * 0.08} className="border-t border-border first:border-t-0">
+            <Link
+              href={service.href}
+              className="group flex flex-col xl:flex-row xl:items-center gap-6 xl:gap-16 py-10 xl:py-14"
+            >
+              <span className="font-mono text-2xl text-muted xl:w-20 shrink-0">
+                {service.num}
+              </span>
+              <h2 className="h2 xl:w-[380px] shrink-0 text-ink group-hover:text-accent transition-colors duration-300">
+                {service.title}
+              </h2>
+              <p className="text-muted text-lg leading-relaxed flex-1">
+                {service.description}
+              </p>
+              <span className="w-14 h-14 rounded-full border border-border shrink-0 flex items-center justify-center text-ink group-hover:bg-accent group-hover:border-accent group-hover:text-white transition-all duration-300 group-hover:-rotate-45">
+                <BsArrowUpRight className="text-2xl" />
+              </span>
+            </Link>
+          </SectionReveal>
+        ))}
+      </div>
+    </div>
   )
 }
 

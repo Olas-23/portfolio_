@@ -1,27 +1,40 @@
+import AmbientBackground from '@/components/AmbientBackground';
+import CursorTracker from '@/components/CursorTracker';
 import Footer from '@/components/Footer';
-import Header from '@/components/Header';
+import SiteHeader from '@/components/nav/SiteHeader';
 import PageTransition from '@/components/PageTransition';
-import StairTransition from '@/components/StairTransition';
-import { JetBrains_Mono } from "next/font/google";
+import ScrollProgress from '@/components/ScrollProgress';
+import { Bricolage_Grotesque, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({
+    subsets: ["latin"],
+    variable: "--font-sans",
+})
+
+const bricolage = Bricolage_Grotesque({
+    subsets: ["latin"],
+    variable: "--font-display",
+})
 
 const jetbrainsMono = JetBrains_Mono({
     subsets: ["latin"],
-    weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
     variable: "--font-jetbrainsMono",
 })
 
 export const metadata = {
-  title: "Ola - portfolio website",
-  description: "Ola Ajayi's Portfolio",
+  title: "Ola Ajayi — Product Designer",
+  description: "Product designer crafting clear, intuitive digital products.",
 };
 
 export default function RootLayout({ children }) {
   return (
 		<html lang="en">
-			<body className={jetbrainsMono.variable}>
-                <Header />
-                {/* <StairTransition /> */}
+			<body className={`${inter.variable} ${bricolage.variable} ${jetbrainsMono.variable} font-sans`}>
+                <ScrollProgress />
+                <AmbientBackground />
+                <CursorTracker />
+                <SiteHeader />
                 <PageTransition>
                     {children}
                 </PageTransition>

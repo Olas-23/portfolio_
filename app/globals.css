@@ -5,22 +5,43 @@
 
 @layer base {
     body{
-        @apply font-primary bg-primary text-white leading-loose;
+        @apply font-sans bg-primary text-ink leading-relaxed antialiased;
+    }
+    /* custom cursor tracker replaces the native cursor on fine pointers */
+    body.cursor-tracked,
+    body.cursor-tracked a,
+    body.cursor-tracked button,
+    body.cursor-tracked [role="button"],
+    body.cursor-tracked label,
+    body.cursor-tracked select {
+        cursor: none;
+    }
+    ::selection {
+        @apply bg-accent text-white;
+    }
+    .display {
+        @apply font-display text-[56px] xl:text-[96px] leading-[0.98] tracking-[-0.02em] font-extrabold;
     }
     .h1 {
-        @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold;
+        @apply font-display text-[40px] xl:text-[64px] leading-[1.05] font-bold tracking-[-0.015em];
     }
     .h2 {
-        @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold;
+        @apply font-display text-[32px] xl:text-[44px] leading-[1.08] font-bold tracking-[-0.01em];
     }
     .h3 {
-        @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold;
+        @apply font-display text-[20px] xl:text-[26px] leading-[1.15] font-semibold;
     }
     .text-outline{
-        -webkit-text-stroke: 1px #ffffff;
+        -webkit-text-stroke: 1px #0A0E1F;
     }
-    
+
     .text-outline-hover {
-        -webkit-text-stroke: 1px #0064e0;
+        -webkit-text-stroke: 1px #0047FF;
+    }
+}
+
+@layer components {
+    .glass {
+        @apply bg-white/70 backdrop-blur-md border border-border shadow-[0_4px_24px_rgba(10,14,31,0.05)];
     }
 }
