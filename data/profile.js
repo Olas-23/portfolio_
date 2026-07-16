@@ -6,4 +6,5 @@ export const profile = {
   location: "Abuja, Nigeria",
   email: "olaoluwaajayib23@gmail.com",
   phone: "(+234) 802 658 7123",
+  calLink: "olaoluwa-ajayi",
 };

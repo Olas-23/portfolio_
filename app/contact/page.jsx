@@ -82,20 +82,24 @@ const Contact = () => {
         const templateParams = {
             from_name: `${data.firstName} ${data.lastName}`,
             from_email: data.email,
-            to_name: "Olaoluwa Ajayi",
+            to_name: profile.name,
+            to_email: profile.email,
+            reply_to: data.email,
             message: data.message,
             phone: data.phone,
             option: data.option
         }
         try{
+            if (!serviceId || !templateId || !publicKey) {
+                throw new Error('EmailJS is not configured');
+            }
             const response = await emailjs.send(serviceId, templateId, templateParams, publicKey);
             console.log("Email sent successfully!", response);
             setSubmitStatus('Message sent successfully!');
-            console.log(data)
             reset();
         } catch (error) {
             console.error('Error sending email', error);
-            setSubmitStatus('Failed to send message. Please try again.');
+            setSubmitStatus(`Failed to send message. Please try again, or email me directly at ${profile.email}.`);
         } finally {
             setIsLoading(false);
         }
@@ -261,7 +265,7 @@ const Contact = () => {
 					<MagneticButton className="inline-block w-full sm:w-[50%]">
 						<Button
 							data-cal-namespace="30min"
-							data-cal-link="retrong/30min"
+							data-cal-link={profile.calLink}
 							data-cal-config='{"layout":"month_view"}'
 							size="lg"
 							className="w-full"

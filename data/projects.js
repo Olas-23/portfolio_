@@ -7,12 +7,13 @@ export const projects = [
     featured: true,
     featuredOrder: 2,
     title: "Mhino",
+    tagline: "A micro-healthcare platform making quality care and insurance affordable through bite-sized payments.",
     description:
       "Mhino is a mobile-first micro-healthcare platform that democratizes access to quality healthcare and basic insurance by enabling flexible, bite-sized payments. It connects users, doctors, and agent centres into a single, end-to-end digital care ecosystem.",
     stack: [{ name: "Figma" }, { name: "Jira" }],
     image: "/assets/work/Mhino_cover.png",
     live: "https://mhino.com/",
-    github: "https://github.com/retrong",
+    github: "https://github.com/Olas-23",
   },
   {
     num: "02",
@@ -22,12 +23,13 @@ export const projects = [
     featured: true,
     featuredOrder: 1,
     title: "CarAlert247",
+    tagline: "A UK vehicle management platform for tracking parking tickets, vehicle tax and MOT renewals.",
     description:
       "CarAlert247 is a UK based vechicle management platform designed to help users and businesses track, manage and receive first hand notifications about parking tickets, vehicle tax and MOT renewal.",
     stack: [{ name: "Figma" }, { name: "Jira" }],
     image: "/assets/work/CarAlert_cover.png",
     live: "https://landing.caralert247.com/",
-    github: "https://github.com/retrong",
+    github: "https://github.com/Olas-23",
   },
   {
     num: "03",
@@ -37,12 +39,13 @@ export const projects = [
     featured: true,
     featuredOrder: 3,
     title: "Nemera Oil & Gas",
+    tagline: "UI/UX rebrand and redesign of an energy company's digital presence.",
     description:
       "The Nemera project focused on the UI/UX rebranding and redesign of the Nemera Oil & Gas website, modernizing its digital presence to reflect a credible, professional, and forward-looking energy company.",
     stack: [{ name: "Figma" }, { name: "Jira" }],
     image: "/assets/work/Nemera.png",
     live: "https://nemera-chi.vercel.app/",
-    github: "https://github.com/retrong",
+    github: "https://github.com/Olas-23",
   },
   {
     num: "04",
@@ -50,12 +53,13 @@ export const projects = [
     category: "Design",
     role: "Product Design",
     title: "QuikLearn",
+    tagline: "A learning platform connecting tutors, students and parents in one intuitive experience.",
     description:
       "The QuikLearn project delivered a user-centric learning platform that connects tutors, students, and parents, enabling parents to manage learning, tutors to deliver structured lessons, and students to engage through intuitive, age-appropriate experiences.",
     stack: [{ name: "Figma" }, { name: "Jira" }],
     image: "/assets/work/quiklearn.png",
     live: "https://quiklearn.co.uk/",
-    github: "https://github.com/retrong",
+    github: "https://github.com/Olas-23",
   },
   {
     num: "05",
@@ -63,11 +67,12 @@ export const projects = [
     category: "Design",
     role: "Product Design",
     title: "Backyard Website",
+    tagline: "A clean corporate website for a technology consulting company.",
     description: "A simple corporate website for a consulting company.",
     stack: [{ name: "Figma" }, { name: "Jira" }],
     image: "/assets/work/bkyd.png",
     live: "https://backyardtech.co.uk/",
-    github: "https://github.com/retrong",
+    github: "https://github.com/Olas-23",
   },
   {
     num: "06",
@@ -75,6 +80,7 @@ export const projects = [
     category: "Design",
     role: "Product Design",
     title: "MHRA",
+    tagline: "Streamlining how complex health and compliance information is accessed and understood.",
     description:
       "The MHRA project focused on improving the digital experience of a regulatory platform, streamlining how complex health and compliance information is accessed, managed, and understood. The work emphasized clarity, usability, and trust",
     stack: [{ name: "Figma" }, { name: "Jira" }],

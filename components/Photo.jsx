@@ -1,62 +1,34 @@
 "use client"
 
-import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const Photo = () => {
-    const reduced = useReducedMotion();
-
-  return (
+	return (
 		<motion.div
-			className="relative w-[300px] h-[300px] xl:w-[500px] xl:h-[500px]"
-			initial={{ opacity: 0 }}
-			animate={{ opacity: 1 }}
-			transition={{ delay: 0.2, duration: 0.4, ease: 'easeOut' }}
+			className="relative w-[400px] xl:w-[440px] aspect-[4/5]"
+			initial={{ opacity: 0, y: 24 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}
 		>
-			{/* portrait, clipped to a circle concentric with the ring */}
-			<div className="absolute inset-[14px] rounded-full overflow-hidden bg-gradient-to-b from-surface to-accent/10">
+			{/* ambient accent halo so the dark image blends into the light page */}
+			<div className="absolute -inset-10 rounded-full bg-accent/15 blur-3xl" aria-hidden="true" />
+
+			<div className="relative w-full h-full rounded-[2rem] overflow-hidden border border-ink/10 shadow-[0_24px_80px_-20px_rgba(0,71,255,0.45)]">
 				<Image
-					src="/assets/img2.png"
+					src="/assets/hero-image.png"
 					alt="Portrait of Ola Ajayi"
 					priority
 					quality={100}
 					fill
-					className="object-cover object-top scale-[1.15]"
+					sizes="(min-width: 1200px) 440px, 400px"
+					className="object-cover"
 				/>
+				{/* soft edge vignette to seat the portrait in the card */}
+				<div className="absolute inset-0 rounded-[2rem] shadow-[inset_0_0_60px_rgba(2,6,23,0.45)]" aria-hidden="true" />
+				{/* white wash on the top-left corner so the dark image melts into the light page (and keeps the headline legible where it overlaps) */}
+				<div className="absolute inset-0 rounded-[2rem] bg-[linear-gradient(135deg,rgba(247,248,251,0.85)_0%,rgba(247,248,251,0.35)_22%,rgba(247,248,251,0)_48%)]" aria-hidden="true" />
 			</div>
-
-			{/* animated ring */}
-			<motion.svg
-				className="absolute inset-0 w-full h-full"
-				fill="transparent"
-				viewBox="0 0 506 506"
-				xmlns="http://www.w3.org/2000/svg"
-			>
-				<motion.circle
-					cx="253"
-					cy="253"
-					r="250"
-					stroke="rgba(0, 71, 255, 0.9)"
-					strokeWidth="4"
-					strokeLinecap="round"
-					strokeLinejoin="round"
-					initial={{ strokeDasharray: '24 10 0 0' }}
-					animate={
-						reduced
-							? { strokeDasharray: '4 250 22 22', rotate: 360 }
-							: {
-								strokeDasharray: ['0, 100, 224, 1', '16 25 92 72', '4 250 22 22'],
-								rotate: [120, 360],
-							}
-					}
-					transition={{
-						duration: 20,
-						repeat: reduced ? 0 : Infinity,
-						repeatType: "reverse"
-					}}
-				></motion.circle>
-			</motion.svg>
 		</motion.div>
 	);
 }

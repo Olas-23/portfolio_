@@ -36,12 +36,12 @@ const ProjectSpotlight = ({ project, index = 0, reverse = false, variant = "full
         }`}
       >
         {/* text half — DOM-first regardless of visual reverse, so tab order follows reading order */}
-        <div className="w-full xl:w-[42%] flex flex-col gap-5">
+        <div className="w-full xl:w-[38%] flex flex-col gap-5">
           <span className="font-mono text-sm text-accent">{project.num}</span>
-          <h3 className={isCompact ? "h3 text-ink" : "display text-ink text-[36px] xl:text-[52px] leading-[1.05]"}>
+          <h3 className={isCompact ? "font-display text-[26px] xl:text-[32px] leading-[1.1] font-semibold text-ink" : "display text-ink text-[36px] xl:text-[52px] leading-[1.05]"}>
             {project.title}
           </h3>
-          {!isCompact && <p className="text-muted text-lg leading-relaxed">{project.description}</p>}
+          <p className="text-muted leading-relaxed">{project.tagline || project.description}</p>
           <div className="flex flex-wrap gap-2">
             <Badge variant="accent">{project.role}</Badge>
             {project.stack.map((item) => (
@@ -67,7 +67,7 @@ const ProjectSpotlight = ({ project, index = 0, reverse = false, variant = "full
         </div>
 
         {/* image half */}
-        <Link href={`/work/${project.slug}`} className="w-full xl:w-[58%] block group">
+        <Link href={`/work/${project.slug}`} className="w-full xl:w-[62%] block group">
           <TiltCard className="relative w-full aspect-[4/3] xl:aspect-[16/10] rounded-2xl overflow-hidden border border-border">
             <motion.div style={{ y: parallaxY }} className="absolute inset-0 -m-6">
               <Image

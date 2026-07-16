@@ -20,6 +20,7 @@ const SPAN_CLASSES = {
   wide: "md:col-span-2 xl:col-span-2",
   tall: "md:col-span-1 xl:col-span-1 xl:row-span-2",
   feature: "md:col-span-2 xl:col-span-2 xl:row-span-2",
+  full: "md:col-span-2 xl:col-span-4",
 };
 
 const BentoCard = ({ children, className, size = "default", as: Wrapper = "div", ...rest }) => {

@@ -4,6 +4,7 @@ import MagneticButton from "@/components/MagneticButton";
 import Marquee from "@/components/Marquee";
 import Photo from "@/components/Photo";
 import ProjectSpotlight from "@/components/ProjectSpotlight";
+import RotatingGreeting from "@/components/RotatingGreeting";
 import SectionReveal from "@/components/SectionReveal";
 import Socials from "@/components/Socials";
 import Stats from "@/components/Stats";
@@ -35,18 +36,23 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden">
-        <div className="container mx-auto relative z-10">
-          <div className="max-w-4xl">
+        <div className="container mx-auto relative z-10 grid xl:grid-cols-2 gap-10 xl:gap-12 items-center">
+          {/* Left half — intro */}
+          <div>
             <SectionReveal delay={0}>
               <AvailabilityIndicator className="mb-8" />
             </SectionReveal>
 
             <SectionReveal delay={0.05}>
-              <h1 className="display text-[13vw] sm:text-[64px] xl:text-[104px] text-ink">
-                {profile.role.split(" ")[0]}{" "}
-                <span className="text-accent">{profile.role.split(" ")[1]}</span>
-                <br />
-                <span className="text-muted text-[9vw] sm:text-[36px] xl:text-[56px]">
+              <h1 className="text-ink">
+                <span className="block font-display font-semibold text-[24px] xl:text-[28px]">
+                  <RotatingGreeting className="text-accent" />, I&apos;m Ola — a
+                </span>
+                <span className="display block text-[13vw] sm:text-[56px] xl:text-[64px] mt-2">
+                  {profile.role.split(" ")[0]}{" "}
+                  <span className="text-accent">{profile.role.split(" ")[1]}</span>
+                </span>
+                <span className="block font-display font-bold text-muted text-[8vw] sm:text-[30px] xl:text-[36px] mt-1">
                   based in {profile.location.split(",")[0]}.
                 </span>
               </h1>
@@ -86,11 +92,34 @@ export default function Home() {
               />
             </SectionReveal>
           </div>
-        </div>
 
-        {/* Photo — right-aligned, fully on-page and vertically centered */}
-        <div className="hidden xl:block absolute right-[4%] top-1/2 -translate-y-1/2 pointer-events-none">
-          <Photo />
+          {/* Right half — photo, kept inside the container so it never spills past the page margin */}
+          <div className="hidden xl:flex justify-end pointer-events-none">
+            <div className="relative">
+              <Photo />
+
+              {/* Focus area — glass panel overlapping the photo's bottom-right corner */}
+              <SectionReveal delay={0.35} className="absolute -bottom-8 -right-4 z-10">
+                <div className="glass rounded-2xl px-6 py-5">
+                  <h3 className="font-mono text-[11px] uppercase tracking-widest text-muted mb-3">
+                    Focus Area
+                  </h3>
+                  <div className="space-y-1.5 text-sm text-ink font-medium">
+                    <p className="flex items-center">
+                      Product Design
+                      <span className="w-px h-3.5 bg-ink/25 mx-3" aria-hidden="true" />
+                      UX Strategy
+                    </p>
+                    <p className="flex items-center">
+                      Design System
+                      <span className="w-px h-3.5 bg-ink/25 mx-3" aria-hidden="true" />
+                      User Research
+                    </p>
+                  </div>
+                </div>
+              </SectionReveal>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -180,7 +209,7 @@ export default function Home() {
             </span>
           </BentoCard>
 
-          <BentoCard size="wide" className="p-0 overflow-hidden">
+          <BentoCard size="full" className="p-0 overflow-hidden">
             <iframe
               src="https://www.superme.ai/embed/oajayi?style=minimalistic"
               width="100%"
