@@ -1,3 +1,6 @@
+import BrowserMockup from "@/components/BrowserMockup";
+import CaseStudyContent from "@/components/CaseStudyContent";
+import CaseStudyMetrics from "@/components/CaseStudyMetrics";
 import CaseStudyPlaceholder from "@/components/CaseStudyPlaceholder";
 import IndexRail from "@/components/IndexRail";
 import SectionReveal from "@/components/SectionReveal";
@@ -44,7 +47,10 @@ export default function CaseStudy({ params }) {
 
   const currentIndex = projects.findIndex((item) => item.slug === project.slug);
   const nextProject = projects[(currentIndex + 1) % projects.length];
-  const railSections = narrativeSections.map((label) => ({ id: toId(label), label }));
+  const customSections = project.caseStudy?.sections;
+  const railSections = customSections
+    ? customSections.map((section) => ({ id: section.id, label: section.label }))
+    : narrativeSections.map((label) => ({ id: toId(label), label }));
 
   return (
     <div className="py-8 xl:py-12">
@@ -82,12 +88,20 @@ export default function CaseStudy({ params }) {
             {project.stack.map((item) => (
               <Badge key={item.name}>{item.name}</Badge>
             ))}
-            <Badge variant="placeholder">Metrics — pending real data</Badge>
+            {!project.metrics && <Badge variant="placeholder">Metrics — pending real data</Badge>}
           </div>
         </SectionReveal>
 
         <SectionReveal delay={0.1}>
-          <div className="relative w-full h-[300px] xl:h-[560px] rounded-2xl overflow-hidden border border-border mb-10">
+          <BrowserMockup
+            url={project.live}
+            aspectRatio={
+              project.imageDimensions
+                ? `${project.imageDimensions.width} / ${project.imageDimensions.height}`
+                : "16 / 10"
+            }
+            className="mb-10"
+          >
             <Image
               src={project.image}
               alt={`${project.title} cover image`}
@@ -95,21 +109,45 @@ export default function CaseStudy({ params }) {
               priority
               className="object-cover"
             />
-          </div>
+          </BrowserMockup>
         </SectionReveal>
 
         <SectionReveal delay={0.15}>
-          <p className="max-w-2xl text-muted text-lg leading-relaxed mb-16">
+          <p className={`text-muted text-lg leading-relaxed ${project.meta ? "mb-8" : "mb-16"}`}>
             {project.description}
           </p>
         </SectionReveal>
 
+        {project.meta && (
+          <SectionReveal delay={0.18}>
+            <dl className="grid grid-cols-2 xl:grid-cols-4 gap-6 mb-16 border-y border-border py-6">
+              {Object.entries(project.meta).map(([key, value]) => (
+                <div key={key}>
+                  <dt className="font-mono text-xs uppercase tracking-widest text-muted mb-1">{key}</dt>
+                  <dd className="text-ink text-sm leading-snug">{value}</dd>
+                </div>
+              ))}
+            </dl>
+          </SectionReveal>
+        )}
+
+        {project.metrics && <CaseStudyMetrics metrics={project.metrics} />}
+
         <div className="grid xl:grid-cols-[200px_1fr] gap-10 xl:gap-16">
           <IndexRail sections={railSections} />
           <div>
-            {narrativeSections.map((section) => (
-              <CaseStudyPlaceholder key={section} section={section} id={toId(section)} />
-            ))}
+            {customSections
+              ? customSections.map((section) => (
+                  <CaseStudyContent
+                    key={section.id}
+                    section={section.label}
+                    id={section.id}
+                    blocks={section.blocks}
+                  />
+                ))
+              : narrativeSections.map((section) => (
+                  <CaseStudyPlaceholder key={section} section={section} id={toId(section)} />
+                ))}
           </div>
         </div>
 

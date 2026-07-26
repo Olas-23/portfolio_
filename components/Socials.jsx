@@ -6,7 +6,7 @@ const socials = [
   { icon: <FaBehance />, path: "https://www.behance.net/ajayiolaoluwa" },
   { icon: <FaLinkedin />, path: "https://www.linkedin.com/in/olaoluwa-bajayi/" },
   { icon: <FaTwitter />, path: "https://x.com/Ajayi_Olaoluwa_" },
-  { icon: <FaInstagram />, path: "https://www.instagram.com/_.olas23/" },
+  { icon: <FaInstagram />, path: "https://www.instagram.com/ola_ajayi_/" },
 ];
 
 const Socials = ({containerStyles, iconStyles}) => {
