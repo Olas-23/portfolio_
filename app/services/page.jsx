@@ -2,6 +2,15 @@ import SectionReveal from '@/components/SectionReveal';
 import Link from 'next/link';
 import { BsArrowUpRight } from "react-icons/bs";
 
+export const metadata = {
+  title: "Services",
+  description:
+    "Product design, design systems, UX strategy, and usability optimization services from Ola Ajayi, a freelance product designer based in Abuja, Nigeria.",
+  alternates: {
+    canonical: "/services",
+  },
+};
+
 const services = [
 	{
 		num: '01',

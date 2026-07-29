@@ -2,6 +2,15 @@ import ProjectSpotlight from "@/components/ProjectSpotlight";
 import SectionReveal from "@/components/SectionReveal";
 import { projects } from "@/data/projects";
 
+export const metadata = {
+  title: "Selected Work",
+  description:
+    "Product design case studies by Ola Ajayi (Olaoluwa Ajayi) spanning healthcare, mobility, energy, education, and regulatory platforms — each designed end to end.",
+  alternates: {
+    canonical: "/work",
+  },
+};
+
 export default function Work() {
   return (
     <div className="container mx-auto py-8 xl:py-12 pb-24">

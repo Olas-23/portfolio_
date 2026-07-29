@@ -32,9 +32,35 @@ export function generateStaticParams() {
 export function generateMetadata({ params }) {
   const project = projects.find((item) => item.slug === params.slug);
   if (!project) return {};
+  const title = `${project.title} — Case Study`;
   return {
-    title: `${project.title} — Case Study | Ola Ajayi`,
+    title,
     description: project.description,
+    alternates: {
+      canonical: `/work/${project.slug}`,
+    },
+    openGraph: {
+      type: "article",
+      title: `${title} | Ola Ajayi`,
+      description: project.description,
+      url: `/work/${project.slug}`,
+      images: project.image
+        ? [
+            {
+              url: project.image,
+              width: project.imageDimensions?.width ?? 1200,
+              height: project.imageDimensions?.height ?? 630,
+              alt: `${project.title} cover image`,
+            },
+          ]
+        : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} | Ola Ajayi`,
+      description: project.description,
+      images: project.image ? [project.image] : undefined,
+    },
   };
 }
 

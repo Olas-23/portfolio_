@@ -45,6 +45,7 @@ export default function Home() {
 
             <SectionReveal delay={0.05}>
               <h1 className="text-ink">
+                <span className="sr-only">{profile.name} ({profile.shortName}) — </span>
                 <span className="block font-display font-semibold text-[24px] xl:text-[28px]">
                   <RotatingGreeting className="text-accent" />, I&apos;m Ola — a
                 </span>
