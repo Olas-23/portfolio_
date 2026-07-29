@@ -80,6 +80,7 @@ const Contact = () => {
 		const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
 
         const templateParams = {
+            name: `${data.firstName} ${data.lastName}`,
             from_name: `${data.firstName} ${data.lastName}`,
             from_email: data.email,
             to_name: profile.name,
