@@ -7,8 +7,8 @@ const Photo = () => {
 	return (
 		<motion.div
 			className="relative w-[400px] xl:w-[440px] aspect-[4/5]"
-			initial={{ opacity: 0, y: 24 }}
-			animate={{ opacity: 1, y: 0 }}
+			initial={{ y: 24 }}
+			animate={{ y: 0 }}
 			transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}
 		>
 			{/* ambient accent halo so the dark image blends into the light page */}
@@ -19,7 +19,6 @@ const Photo = () => {
 					src="/assets/hero-image.png"
 					alt="Portrait of Ola Ajayi"
 					priority
-					quality={100}
 					fill
 					sizes="(min-width: 1200px) 440px, 400px"
 					className="object-cover"

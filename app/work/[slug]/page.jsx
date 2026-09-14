@@ -133,6 +133,7 @@ export default function CaseStudy({ params }) {
               alt={`${project.title} cover image`}
               fill
               priority
+              sizes="(min-width: 1200px) 1136px, 100vw"
               className="object-cover"
             />
           </BrowserMockup>

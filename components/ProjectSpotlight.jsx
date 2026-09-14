@@ -75,6 +75,7 @@ const ProjectSpotlight = ({ project, index = 0, reverse = false, variant = "full
                 alt={`${project.title} cover image`}
                 fill
                 priority={priority}
+                sizes="(min-width: 1200px) 62vw, 100vw"
                 className="object-cover group-hover:scale-[1.04] transition-transform duration-500 ease-out-expo"
               />
             </motion.div>
