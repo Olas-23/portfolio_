@@ -25,8 +25,8 @@ const Photo = () => {
 				/>
 				{/* soft edge vignette to seat the portrait in the card */}
 				<div className="absolute inset-0 rounded-[2rem] shadow-[inset_0_0_60px_rgba(2,6,23,0.45)]" aria-hidden="true" />
-				{/* white wash on the top-left corner so the dark image melts into the light page (and keeps the headline legible where it overlaps) */}
-				<div className="absolute inset-0 rounded-[2rem] bg-[linear-gradient(135deg,rgba(247,248,251,0.85)_0%,rgba(247,248,251,0.35)_22%,rgba(247,248,251,0)_48%)]" aria-hidden="true" />
+				{/* surface-color wash on the top-left corner so the dark image melts into the page background (and keeps the headline legible where it overlaps) */}
+				<div className="absolute inset-0 rounded-[2rem] bg-[linear-gradient(135deg,rgb(var(--color-surface)/0.85)_0%,rgb(var(--color-surface)/0.35)_22%,rgb(var(--color-surface)/0)_48%)]" aria-hidden="true" />
 			</div>
 		</motion.div>
 	);

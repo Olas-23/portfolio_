@@ -2,10 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --color-primary: 255 255 255;
+    --color-secondary: 238 241 246;
+    --color-surface: 247 248 251;
+    --color-accent: 0 71 255;
+    --color-accent-hover: 0 53 200;
+    --color-ink: 10 14 31;
+    --color-muted: 93 102 120;
+    --color-border: 228 231 238;
+}
+
+.dark {
+    --color-primary: 10 12 20;
+    --color-secondary: 19 22 32;
+    --color-surface: 24 27 38;
+    --color-accent: 77 130 255;
+    --color-accent-hover: 102 150 255;
+    --color-ink: 237 240 246;
+    --color-muted: 148 156 176;
+    --color-border: 38 42 56;
+}
 
 @layer base {
     body{
-        @apply font-sans bg-primary text-ink leading-relaxed antialiased;
+        @apply font-sans bg-primary text-ink leading-relaxed antialiased transition-colors duration-300;
     }
     /* custom cursor tracker replaces the native cursor on fine pointers */
     body.cursor-tracked,
@@ -32,16 +53,16 @@
         @apply font-display text-[20px] xl:text-[26px] leading-[1.15] font-semibold;
     }
     .text-outline{
-        -webkit-text-stroke: 1px #0A0E1F;
+        -webkit-text-stroke: 1px rgb(var(--color-ink));
     }
 
     .text-outline-hover {
-        -webkit-text-stroke: 1px #0047FF;
+        -webkit-text-stroke: 1px rgb(var(--color-accent));
     }
 }
 
 @layer components {
     .glass {
-        @apply bg-white/70 backdrop-blur-md border border-border shadow-[0_4px_24px_rgba(10,14,31,0.05)];
+        @apply bg-primary/70 backdrop-blur-md border border-border shadow-[0_4px_24px_rgba(10,14,31,0.05)];
     }
 }

@@ -29,16 +29,16 @@ module.exports = {
             mono: ["var(--font-jetbrainsMono)", "monospace"],
         },
         colors: {
-            primary: "#FFFFFF",
-            secondary: "#EEF1F6",
-            surface: "#F7F8FB",
+            primary: "rgb(var(--color-primary) / <alpha-value>)",
+            secondary: "rgb(var(--color-secondary) / <alpha-value>)",
+            surface: "rgb(var(--color-surface) / <alpha-value>)",
             accent: {
-                DEFAULT: "#0047FF",
-                hover: "#0035C8"
+                DEFAULT: "rgb(var(--color-accent) / <alpha-value>)",
+                hover: "rgb(var(--color-accent-hover) / <alpha-value>)"
             },
-            ink: "#0A0E1F",
-            muted: "#5D6678",
-            border: "rgba(10,14,31,0.08)",
+            ink: "rgb(var(--color-ink) / <alpha-value>)",
+            muted: "rgb(var(--color-muted) / <alpha-value>)",
+            border: "rgb(var(--color-border) / <alpha-value>)",
         },
       keyframes: {
         "accordion-down": {

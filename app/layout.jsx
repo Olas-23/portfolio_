@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import SiteHeader from '@/components/nav/SiteHeader';
 import PageTransition from '@/components/PageTransition';
 import ScrollProgress from '@/components/ScrollProgress';
+import ThemeProvider from '@/components/ThemeProvider';
 import { profile } from '@/data/profile';
 import { Bricolage_Grotesque, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
@@ -123,20 +124,22 @@ const personJsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
 			<body className={`${inter.variable} ${bricolage.variable} ${jetbrainsMono.variable} font-sans`}>
                 <script
                   type="application/ld+json"
                   dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
                 />
-                <ScrollProgress />
-                <AmbientBackground />
-                <CursorTracker />
-                <SiteHeader />
-                <PageTransition>
-                    {children}
-                </PageTransition>
-                <Footer />
+                <ThemeProvider>
+                    <ScrollProgress />
+                    <AmbientBackground />
+                    <CursorTracker />
+                    <SiteHeader />
+                    <PageTransition>
+                        {children}
+                    </PageTransition>
+                    <Footer />
+                </ThemeProvider>
             </body>
 		</html>
 	);
